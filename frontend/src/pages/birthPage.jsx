@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { TypeAnimation } from "react-type-animation";
 import crown from "../assets/crown.png";
 import heart from "../assets/heart img.png";
@@ -15,8 +16,17 @@ import FloatingHeart from "../components/FloatingHearts";
 import "./style.css";
 
 function BirthdayPage() {
+  const audioRef = useRef(null);
+
+  useEffect(() => {
+    audioRef.current.play();
+  })
+
   return (
     <div className="container">
+      <audio ref={audioRef} loop>
+        <source src="/music.mp3.mpeg" type="audio/mp3"/>
+      </audio>
       <div>
         <BullonExplorer/>
         <FloatingHeart/>
