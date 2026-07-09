@@ -1,0 +1,163 @@
+.balloon{
+    position:absolute;
+    left:50%;
+    top:55%;
+    width:80px;
+    height:100px;
+
+    transform:translate(-50%,-50%);
+
+    animation:pop .8s forwards;
+}
+
+@keyframes pop{
+    0%{
+        transform:translate(-50%,-50%) scale(1);
+    }
+    70%{
+        transform:translate(-50%,-50%) scale(1.2);
+    }
+    100%{
+        opacity:0;
+        transform:translate(-50%,-50%) scale(0);
+    }
+}
+
+.heart{
+    position:absolute;
+    bottom:-150px;
+    animation: float 8s linear forwards;
+}
+
+@keyframes float{
+0%{
+transform:
+translateY(0);
+opacity:0;
+}
+20%{
+opacity:1;
+}
+100%{
+transform:
+translateY(-120vh);
+opacity:0;
+}
+}
+
+.explosion-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Balloon */
+
+.balloon {
+
+  position: absolute;
+
+  left: 50%;
+  top: 55%;
+
+  transform: translate(-50%, -50%);
+
+  width: 90px;
+  height: 120px;
+
+  background: #ff5f9e;
+
+  border-radius: 50% 50% 45% 45%;
+
+  animation: pop .8s ease forwards;
+}
+
+.balloon::after {
+
+  content: "";
+
+  position: absolute;
+
+  width: 2px;
+  height: 80px;
+
+  background: white;
+
+  left: 50%;
+
+  top: 118px;
+
+}
+
+/* Balloon Pop */
+
+@keyframes pop {
+
+  0% {
+
+    transform: translate(-50%, -50%) scale(1);
+
+    opacity: 1;
+
+  }
+
+  80% {
+
+    transform: translate(-50%, -50%) scale(1.2);
+
+  }
+
+  100% {
+
+    transform: translate(-50%, -50%) scale(0);
+
+    opacity: 0;
+
+  }
+
+}
+
+/* Stars */
+
+.star {
+
+  position: absolute;
+
+  left: 50%;
+  top: 55%;
+
+  font-size: 18px;
+
+  opacity: 0;
+
+  animation: explode 1.3s ease forwards;
+}
+
+/* Explosion */
+
+@keyframes explode {
+
+  0% {
+
+    transform: translate(0,0) scale(0);
+
+    opacity: 0;
+
+  }
+
+  20% {
+
+    opacity: 1;
+
+  }
+
+  100% {
+
+    transform: translate(var(--x), var(--y)) scale(1.6);
+
+    opacity: 0;
+
+  }
+
+}

@@ -1,0 +1,17 @@
+.star{
+
+    position:absolute;
+
+    left:50%;
+    top:55%;
+
+    width:6px;
+    height:6px;
+
+    background:white;
+
+    border-radius:50%;
+
+    animation:explode 1.2s forwards;
+
+}
